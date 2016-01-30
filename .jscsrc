@@ -1,0 +1,26 @@
+ {
+	"config": true,
+	"fix": false,
+	"esnext": true, // If you use ES6 http://jscs.info/overview.html#esnext
+	"verbose": false, // If you need output with rule names http://jscs.info/overview.html#verbose
+	"requireCurlyBraces": ["if"],
+	"disallowMixedSpacesAndTabs": true,
+	"disallowMultipleLineBreaks": true,
+	"disallowMultipleSpaces": {
+	  "allowEOLComments": true
+	},
+	"disallowMultipleVarDecl": true,
+	"disallowUnusedParams": true,
+	"validateIndentation": 2,
+	"requireSpacesInFunctionExpression": {
+	  "beforeOpeningRoundBrace": true,
+	  "beforeOpeningCurlyBrace": true
+	},
+	"requireSemicolons": true,
+	"requireSpaceAfterKeywords": true,
+	"requireDotNotation": true,
+	"requireCommaBeforeLineBreak": true,
+	"disallowTrailingComma": true,
+	"disallowTrailingWhitespace": true,
+	"requireSpaceAfterComma": true
+}

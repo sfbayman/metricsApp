@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindScoper</title>
+    <link rel="icon" href="dist/images/map-icon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="dist/css/web-fonts.css" />
+    <link rel="stylesheet" href="dist/css/app-main.css" />
+  </head>
+  <body>
+    <div id="scoreApp">
+      <div id="appHeader">
+      </div>
+      <div id="appSection">
+      </div>
+      <div id="appFooter">
+      </div>
+    </div>
+    <script src="http://localhost:8080/build/bundle.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://localhost:9999');
+      socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+      });
+    </script>
+  </body>
+</html>

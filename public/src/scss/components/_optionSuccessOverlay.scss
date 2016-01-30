@@ -1,0 +1,49 @@
+@-webkit-keyframes modalEntry {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes modalEntry {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes modalEntry {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes modalEntry {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.modal.in .modal-dialog {
+  -webkit-animation: modalEntry 0.5s 1; /* Safari 4+ */
+  -moz-animation:    modalEntry 0.5s 1; /* Fx 5+ */
+  -o-animation:      modalEntry 0.5s 1; /* Opera 12+ */
+  animation: modalEntry 0.5s 1; /* IE 10+, Fx 29+ */
+  margin-top: 40px;
+}
+
+.modal-backdrop.in{
+  opacity : 0.4;
+}
+
+.option-success {
+  .modal-title {
+    font-size: 55px;
+    color : #F7AB24;
+    text-align: center;
+    text-transform: none;
+    font-family : "Century Gothic";
+  }
+  .body-title {
+    text-align: center;
+    font-size : 32px;
+    color : #fff;
+    font-family : "Century Gothic";
+  }
+  .modal-content {
+    background-color: #000;
+    border: 3px solid #007CBF;
+  }
+
+}
