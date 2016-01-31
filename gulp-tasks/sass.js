@@ -14,9 +14,11 @@ var config = {
 
 module.exports = function (gulp, plugins) {
     return function () {
-        plugins.sass('public/scss/app-main.scss',{ sourcemap: 'inline' })
-            .on('error', plugins.sass.logError)
-            .pipe(plugins.autoprefixer())
+        plugins.sass('public/scss/app-main.scss',{sourcemap: true, style: 'compact'})
+  //          .on('error', plugins.sass.logError)
+            
+            .pipe(plugins.autoprefixer("last 1 version", "> 1%", "ie 8", "ie 7"))
+            .pipe(plugins.sourcemaps.write())
             .pipe(gulp.dest(config.output));
     };
 };
