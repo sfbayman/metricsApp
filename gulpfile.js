@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var del = require('del');
+var runSequence = require('run-sequence');
+
 var plugins = require('gulp-load-plugins')({
     rename: {
     	'pattern': ['gulp-*', 'gulp.*'],
@@ -13,14 +15,22 @@ function getTask(task) {
     return require('./gulp-tasks/' + task)(gulp, plugins);
 }
 
+function build() {
+	console.log("build successfully completed")
+}
+
 gulp.task('clean', function() {
-    return del(["node_modules"]);
+    return del(["public/js/dist"]);
 });
 
 gulp.task('sass', getTask('sass'));
 gulp.task('webpack', getTask('webpack'));
 gulp.task('webpack-dev-server', getTask('webpack-dev-server'));
 
-gulp.task('default', ['sass'], function() {
-    gulp.watch('src/sass/**/*.{sass,scss}', ['sass']);
+gulp.task('default', ['sass','webpack', 'webpack-dev-server'], function() {
+    gulp.watch('public/scss/**/*.scss', ['sass']);
+});
+
+gulp.task('build', function() {
+  runSequence('clean',['sass', 'webpack']);
 });
