@@ -11,9 +11,8 @@ console.log(config.module);
     config.devtool = "eval";
     config.debug = true;
 
-
-
     new WebpackDevServer(webpack(config), {
+        publicPath: config.output.publicPath,
         stats: {
             colors: true
         }
