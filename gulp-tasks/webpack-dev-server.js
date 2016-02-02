@@ -6,8 +6,12 @@ module.exports = function(gulp, plugins) {
     return function() {
 // Start a webpack-dev-server
  var config = Object.create(require('../webpack.config.js'));
+    config = require('../webpack.config.js');
+console.log(config.module);
     config.devtool = "eval";
     config.debug = true;
+
+
 
     new WebpackDevServer(webpack(config), {
         stats: {

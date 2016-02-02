@@ -1,28 +1,28 @@
 var path = require('path');
 module.exports = {
   entry: [
-    './public/js/main.jsx'
+      './public/js/main.jsx'
   ],
   output: {
-    path: __dirname,
-    publicPath: '/dist/',
-    filename: 'bundle.js'
+      path: __dirname,
+      publicPath: '/assets/',
+      filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      test : /\.jsx?$/,
-      loader: 'babel',
-        query: {
-                presets: ['react', 'es2015']
-            }
-    }]
+      loaders: [{
+          exclude: /node_modules/,
+          test: /\.jsx?$/,
+          loader: 'babel',
+          query: {
+              presets: ['react', 'es2015']
+          }
+      }]
   },
   resolve: {
-    root: [path.resolve(__dirname, 'public/js'), path.resolve(__dirname, 'node_modules')],
-    extensions: ['', '.js', '.jsx']
+      root: [path.resolve(__dirname, 'public/js'), path.resolve(__dirname, 'node_modules')],
+      extensions: ['', '.js', '.jsx']
   },
   devServer: {
-    //contentBase: './'
+      contentBase: './'
   }
 };
